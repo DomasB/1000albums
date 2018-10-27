@@ -18,8 +18,8 @@
   .then(r => {
     r.map(artist => {
       let image = document.createElement('img');
-      img.src = artist.artist_image;
-      img.classList.add("artist-image");
+      image.src = artist.artist_image;
+      image.classList.add("artist-image");
       document.body.appendChild(image);
     })
   })
