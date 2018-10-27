@@ -5,6 +5,12 @@
     <title>1000 albums challange</title>
   </head>
   <body>
-TEST
+<script type="text/javascript">
+  fetch('data.json')
+  .then(r => JSON.parse(r))
+  .then(r => {
+    console.log(r);
+  })
+</script>
   </body>
 </html>
