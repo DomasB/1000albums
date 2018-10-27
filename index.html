@@ -3,13 +3,25 @@
   <head>
     <meta charset="utf-8">
     <title>1000 albums challange</title>
+    <style media="screen">
+      .artist-image {
+        display:inline-block;
+        width:300px;
+        height:300px;
+      }
+    </style>
   </head>
   <body>
 <script type="text/javascript">
   fetch('data.json')
   .then(r => r.json())
   .then(r => {
-    console.log(r);
+    r.map(artist => {
+      let image = document.createElement('img');
+      img.src = artist.artist_image;
+      img.classList.add("artist-image");
+      document.body.appendChild(image);
+    })
   })
 </script>
   </body>
