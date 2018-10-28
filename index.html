@@ -76,8 +76,8 @@
           image.classList.add("artist-image");
           containerDiv.appendChild(image);
           containerDiv.appendChild(titleDiv);
-          containerDiv.addEventListener('click' () => {
-            image.style.transform = image.style.transform == 'rotateY(180deg)' ?  'rotateY(180deg)' :  'rotateY(0deg)';
+          containerDiv.addEventListener('click', () => {
+            image.style.transform = image.style.transform == 'rotateY(180deg)' ?  'rotateY(0deg)' :  'rotateY(180deg)';
           })
           document.getElementById('app').appendChild(containerDiv);
         })
