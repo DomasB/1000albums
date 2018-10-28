@@ -26,7 +26,7 @@
     if (windowHeight - scrollHeight < 500) {
       let dataToDraw = data.slice(0,40);
       data = data.slice(40)
-      drawImage(dataToDraw);  
+      drawImage(dataToDraw);
     }
   })
   fetch('data.json')
@@ -41,7 +41,7 @@
       image.src = r[i].artist_image;
       image.classList.add("artist-image");
       document.getElementById('app').appendChild(image);
-    }):
+    })
   }
 
 </script>
