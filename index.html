@@ -36,9 +36,9 @@
     drawImage(r.slice(0,40));
   })
   const drawImage = (imageArray) => {
-    imageArray.map(image => {
+    imageArray.map(artist => {
       let image = document.createElement('img');
-      image.src = r[i].artist_image;
+      image.src = artist.artist_image;
       image.classList.add("artist-image");
       document.getElementById('app').appendChild(image);
     })
