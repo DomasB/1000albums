@@ -39,10 +39,17 @@
     Promise.all(
       imageArray.map(artist => {
         return fetch(artist.artist_image).then(r => {
+          let containerDiv = documment.createElement('div');
+          containerDiv.classList.add('artist-container');
+          let titleDiv = document.createElement('div');
+          titleDiv.classList.add('artist-title');
+          titleDiv.innerHTML = artist.artist_name;
           let image = document.createElement('img');
           image.src = r.ok ? artist.artist_image : 'empty.png';
           image.classList.add("artist-image");
-          document.getElementById('app').appendChild(image);
+          containerDiv.appendChild(image);
+          containerDiv.appendChild(titleDiv);
+          document.getElementById('app').appendChild(containerDiv);
         })
       })
     )
