@@ -30,6 +30,8 @@
         word-break: break-word;
         padding: 1vw 0px;
         font-size: 100%;
+        transition: transform 1s ease-in-out;
+        backface-visibility: hidden;
         text-shadow:0px 1px 0 rgb(0,0,0),0px -1px 0 rgb(0,0,0),1px 0px 0 rgb(0,0,0),-1px 0px 0 rgb(0,0,0),1px 1px 0 rgb(0,0,0),1px -1px 0 rgb(0,0,0),-1px 1px 0 rgb(0,0,0),-1px -1px 0 rgb(0,0,0),0px 2px 0 rgb(0,0,0),0px -2px 0 rgb(0,0,0),2px 0px 0 rgb(0,0,0),-2px 0px 0 rgb(0,0,0),2px 2px 0 rgb(0,0,0),2px -2px 0 rgb(0,0,0),-2px 2px 0 rgb(0,0,0),-2px -2px 0 rgb(0,0,0);
       }
       .artist-image {
@@ -39,6 +41,8 @@
         position: absolute;
         min-width: 150px;
         min-height: 150px;
+        transition: transform 1s ease-in-out;
+        backface-visibility: hidden;
       }
     </style>
     <link href="https://fonts.googleapis.com/css?family=Krub" rel="stylesheet">
@@ -71,6 +75,12 @@
           let titleDiv = document.createElement('div');
           titleDiv.classList.add('artist-title');
           titleDiv.innerHTML = artist.artist_name;
+
+          let albumTitleDiv = document.createElement('div');
+          albumTitleDiv.classList.add('artist-title');
+          albumTitleDiv.innerHTML = artist.album.album_name;
+          albumTitleDiv.style.transform = 'rotateY(180deg)';
+
           let image = document.createElement('img');
           image.src = r.ok ? artist.artist_image : 'empty.png';
           image.classList.add("artist-image");
@@ -78,6 +88,8 @@
           containerDiv.appendChild(titleDiv);
           containerDiv.addEventListener('click', () => {
             image.style.transform = image.style.transform == 'rotateY(180deg)' ?  'rotateY(0deg)' :  'rotateY(180deg)';
+            titleDiv.style.transform = titleDiv.style.transform == 'rotateY(180deg)' ?  'rotateY(0deg)' :  'rotateY(180deg)';
+            albumTitleDiv.style.transform =  albumTitleDiv.style.transform == 'rotateY(180deg)' ?  'rotateY(0deg)' :  'rotateY(180deg)';
           })
           document.getElementById('app').appendChild(containerDiv);
         })
