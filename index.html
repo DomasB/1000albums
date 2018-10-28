@@ -86,6 +86,7 @@
           image.classList.add("artist-image");
           containerDiv.appendChild(image);
           containerDiv.appendChild(titleDiv);
+          containerDiv.appendChild(albumTitleDiv);
           containerDiv.addEventListener('click', () => {
             image.style.transform = image.style.transform == 'rotateY(180deg)' ?  'rotateY(0deg)' :  'rotateY(180deg)';
             titleDiv.style.transform = titleDiv.style.transform == 'rotateY(180deg)' ?  'rotateY(0deg)' :  'rotateY(180deg)';
