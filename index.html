@@ -39,7 +39,7 @@
     Promise.all(
       imageArray.map(artist => {
         return fetch(artist.artist_image).then(r => {
-          let containerDiv = documment.createElement('div');
+          let containerDiv = document.createElement('div');
           containerDiv.classList.add('artist-container');
           let titleDiv = document.createElement('div');
           titleDiv.classList.add('artist-title');
