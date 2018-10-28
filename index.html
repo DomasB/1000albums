@@ -4,6 +4,10 @@
     <meta charset="utf-8">
     <title>1000 albums challange</title>
     <style media="screen">
+      #app {
+        max-width:1500px;
+        margin:0 auto;
+      }
       .artist-image {
         display:inline-block;
         width:300px;
@@ -12,16 +16,19 @@
     </style>
   </head>
   <body>
+    <div id="app"></div>
 <script type="text/javascript">
+  let data;
   fetch('data.json')
   .then(r => r.json())
   .then(r => {
-    r.map(artist => {
+    data = r.slice(9);
+    for(let i=0; i<10; i++) {
       let image = document.createElement('img');
-      image.src = artist.artist_image;
+      image.src = r[i].artist_image;
       image.classList.add("artist-image");
-      document.body.appendChild(image);
-    })
+      document.getElementById('app').appendChild(image);
+    }
   })
 </script>
   </body>
