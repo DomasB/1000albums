@@ -19,6 +19,7 @@
       }
       .artist-title {
         font-family: 'Krub', sans-serif;
+        text-align: center;
         vertical-align: bottom;
         color: white;
         width: 15vw;
@@ -26,7 +27,8 @@
         position: relative;
         display: table-cell;
         height: 100%;
-        padding: 1vw;
+        word-break: break-word;
+        padding: 1vw 0px;
         font-size: 100%;
         text-shadow:0px 1px 0 rgb(0,0,0),0px -1px 0 rgb(0,0,0),1px 0px 0 rgb(0,0,0),-1px 0px 0 rgb(0,0,0),1px 1px 0 rgb(0,0,0),1px -1px 0 rgb(0,0,0),-1px 1px 0 rgb(0,0,0),-1px -1px 0 rgb(0,0,0),0px 2px 0 rgb(0,0,0),0px -2px 0 rgb(0,0,0),2px 0px 0 rgb(0,0,0),-2px 0px 0 rgb(0,0,0),2px 2px 0 rgb(0,0,0),2px -2px 0 rgb(0,0,0),-2px 2px 0 rgb(0,0,0),-2px -2px 0 rgb(0,0,0);
       }
@@ -74,6 +76,9 @@
           image.classList.add("artist-image");
           containerDiv.appendChild(image);
           containerDiv.appendChild(titleDiv);
+          containerDiv.addEventListener('click' () => {
+            image.style.transform = image.style.transform == 'rotateY(180deg)' ?  'rotateY(180deg)' :  'rotateY(0deg)';
+          })
           document.getElementById('app').appendChild(containerDiv);
         })
       })
