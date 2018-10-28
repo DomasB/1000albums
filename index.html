@@ -12,6 +12,7 @@
         display:inline-block;
         width:300px;
         height:300px;
+        vertical-align: top;
       }
     </style>
   </head>
@@ -19,11 +20,12 @@
     <div id="app"></div>
 <script type="text/javascript">
   let data;
+  document.addEventListener('scroll', (e) => {console.log(window.innerHeight, window.scrollY)})
   fetch('data.json')
   .then(r => r.json())
   .then(r => {
-    data = r.slice(9);
-    for(let i=0; i<10; i++) {
+    data = r.slice(40);
+    for(let i=0; i<40; i++) {
       let image = document.createElement('img');
       image.src = r[i].artist_image;
       image.classList.add("artist-image");
