@@ -23,7 +23,7 @@
   document.addEventListener('scroll', (e) => {
     let windowHeight = document.getElementById('app').getBoundingClientRect().height;
     let scrollHeight = window.scrollY;
-    if (windowHeight - scrollHeight < 500) {
+    if (windowHeight - scrollHeight < 1600) {
       let dataToDraw = data.slice(0,40);
       data = data.slice(40)
       drawImage(dataToDraw);
