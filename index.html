@@ -36,12 +36,16 @@
     drawImage(r.slice(0,40));
   })
   const drawImage = (imageArray) => {
-    imageArray.map(artist => {
-      let image = document.createElement('img');
-      image.src = artist.artist_image;
-      image.classList.add("artist-image");
-      document.getElementById('app').appendChild(image);
-    })
+    Promise.all(
+      imageArray.map(artist => {
+        return fetch(artist.artist_image).then(r => {
+          let image = document.createElement('img');
+          image.src = r.ok ? artist.artist_image : 'empty.png';
+          image.classList.add("artist-image");
+          document.getElementById('app').appendChild(image);
+        })
+      })
+    )
   }
 
 </script>
