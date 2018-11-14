@@ -5,6 +5,9 @@
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <title>1000 albums challange</title>
     <style media="screen">
+      html {
+        scroll-behavior: smooth;
+      }
       #app {
         max-width: 80vw;
         margin: 0 auto;
@@ -24,6 +27,7 @@
         user-select: none;
         text-align: center;
         vertical-align: text-bottom;
+        padding: 0px 5px;
         color: white;
         width: 100%;
         height: auto;
@@ -116,7 +120,7 @@
           image.classList.add('image');
 
           let albumImage = document.createElement('img');
-          albumImage.src = r.ok ? artist.album.album_image : 'empty.png'
+          albumImage.src = r.ok ? artist.album.album_image : 'emptyAlbum.png'
           albumImage.classList.add('image')
           albumImage.classList.add('album-image')
 
