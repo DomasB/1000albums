@@ -144,6 +144,7 @@
             albumImage.style.transform = image.style.transform == 'rotateY(180deg)' ?  'rotateY(0deg)' :  'rotateY(180deg)';
             titleDiv.style.transform = titleDiv.style.transform == 'rotateY(180deg)' ?  'rotateY(0deg)' :  'rotateY(180deg)';
             albumTitleDiv.style.transform =  albumTitleDiv.style.transform == 'rotateY(180deg)' ?  'rotateY(0deg)' :  'rotateY(180deg)';
+            albumImage.src = r.ok ? artist.album.album_image : 'emptyAlbum.png'
           })
           document.getElementById('app').appendChild(containerDiv);
         })
