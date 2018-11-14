@@ -2,12 +2,12 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
     <title>1000 albums challange</title>
     <style media="screen">
       #app {
         max-width: 80vw;
         margin: 0 auto;
-        min-width: 600px;
       }
       .artist-container {
         display: inline-block;
@@ -54,6 +54,24 @@
       }
       .album-image {
         transform: rotateY(180deg);
+      }
+
+      @media only screen and (max-width: 600px) {
+        body {
+          margin: 0px;
+        }
+        #app {
+          max-width: 100vw;
+          margin: 0px;
+        }
+        .artist-container {
+          width: 50vw;
+          height: 50vw;
+        }
+        .image {
+          width: 50vw;
+          height: 50vw;
+        }
       }
     </style>
     <link href="https://fonts.googleapis.com/css?family=Krub" rel="stylesheet">
